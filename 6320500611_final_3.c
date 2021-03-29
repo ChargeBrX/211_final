@@ -1,11 +1,12 @@
 #include <stdio.h>
 int main()
 {
-    int n,m,o,i,j,k;
+    int n,m,o,i,j,k,s;
 
     scanf("%d %d %d",&n,&m,&o);
 
     int a[n][n],b[m][m],c[o][o];
+    int x[n*2 + 2],y[m*2 + 2],z[o*2 + 2];
 
     for(i=0;i<n;i++)
     {
@@ -14,42 +15,32 @@ int main()
             scanf("%d",&a[i][j]);
         }
     }
+
+
     for(i=0;i<n;i++)
     {
+        x[i] = 0;
         for(j=0;j<n;j++)
         {
-            printf("%d ",a[i][j]);
+           x[i] += a[i][j];
         }
-        printf("\n");
     }
-    for(i=0;i<n;i++)
+    s = i;
+    for(i=s,j=0;i<s*2;i++,j++)
     {
-        for(j=0;j<n;j++)
+        x[i] = 0;
+        for(k=0;k<n;k++)
         {
-            scanf("%d",&b[i][j]);
+            x[i] += a[k][j];
         }
     }
-    for(i=0;i<n;i++)
+
+    for(i=0;i<n*2;i++)
     {
-        for(j=0;j<n;j++)
-        {
-            printf("%d ",b[i][j]);
-        }
-        printf("\n");
+        printf("%d ",x[i]);
     }
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n;j++)
-        {
-            scanf("%d",&c[i][j]);
-        }
-    }
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n;j++)
-        {
-            printf("%d ",c[i][j]);
-        }
-        printf("\n");
-    }
+
+
+
+
 }
