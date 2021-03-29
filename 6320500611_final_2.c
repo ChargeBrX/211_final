@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int n,i,max,x,j;
+    int n,i,max,x=0;
 
     scanf("%d",&n);
 
@@ -10,24 +10,17 @@ int main()
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
-    }
-
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n-1;j++)
+        if(x<a[i])
         {
-            if(a[i]<a[j])
-            {
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
+            x = a[i];
         }
     }
 
-    int b[a[n-1]];
 
-    for(i=0;i<a[n-1];i++)
+
+    int b[x];
+
+    for(i=0;i<x;i++)
     {
         b[i] = 0;
     }
@@ -38,7 +31,7 @@ int main()
     }
 
     max = b[0];
-    for(i=1;i<a[n-1];i++)
+    for(i=1;i<x;i++)
     {
         if(max<b[i])
         {
@@ -46,17 +39,13 @@ int main()
         }
     }
 
-    for(i=0;i<a[n-1];i++)
+    for(i=0;i<x;i++)
     {
         if(b[i]>0&&b[i]==max)
         {
             printf("%d ",i+1);
         }
     }
-
-
-
-
 
     return 0;
 }
