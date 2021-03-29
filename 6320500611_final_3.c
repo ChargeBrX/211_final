@@ -106,13 +106,12 @@ int main()
     s = i;
     for(i=s; i<s+2; i++)
     {
-        x[i] =0;
+        z[i] =0;
         for(k=0; k<o; k++)
         {
             z[i] += c[k][k];
         }
     }
-
 
 
     for(i=1; i<n*2+2; i++)
@@ -128,7 +127,7 @@ int main()
         }
     }
 
-    for(i=0; i<m*2+2; i++)
+    for(i=1; i<m*2+2; i++)
     {
         if(y[0]==y[i])
         {
@@ -141,7 +140,7 @@ int main()
         }
     }
 
-    for(i=0; i<o*2+2; i++)
+    for(i=1; i<o*2+2; i++)
     {
         if(z[0]==z[i])
         {
